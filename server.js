@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const uuid = require('./helpers/uuid');
-const {readFromFile, readThenAppend, writeToFile} = require('./helpers/fsUtils');
+const {readFromFile, readAndAppend, writeToFile} = require('./helpers/fsUtils');
 
 // Set constant for db.json file
 const db = require('./db/db.json');
@@ -29,9 +29,21 @@ app.get('/api/notes', (req, res) =>
   res.json(db)
 );
 
-app.post('/api/notes', (req,res) =>
-  res.send('Placeholder for posting notes.')
-);
+app.post('/api/notes', (req,res) => {
+  // res.send('Placeholder for posting notes.')
+  const { title, text } = req.body;
+  if (req.body) {
+    const note = {
+      title,
+      text,
+      id: uuid(),
+    };
+    readAndAppend(note, './db/db.json');
+    res.json("Congratulations, you've successfully saved your note!");
+  } else {
+    res.error("There was something wrong with your attempt to save a note");
+  }
+});
 
 app.delete('/api/notes/:id', (req,res) => 
   // see activity for looping through json file items
