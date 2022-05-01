@@ -25,13 +25,17 @@ app.get('/api/notes', (req, res) =>
   res.json(db)
 );
 
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, 'public/index.html'))
+app.post('/api/notes', (req,res) =>
+  res.send('Placeholder for posting notes.')
 );
 
 app.delete('/api/notes/:id', (req,res) => 
   // see activity for looping through json file items
   res.send('Got a DELETE request at /api/notes/:id')
+);
+
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, 'public/index.html'))
 );
 
 app.listen(PORT, () =>
