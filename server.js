@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const uuid = require('./helpers/uuid');
-const {readFromFile, readAndAppend, writeToFile} = require('./helpers/fsUtils');
+const { readFromFile, readAndAppend, writeToFile } = require('./helpers/fsUtils');
 
 // Set constant for db.json file
 const db = require('./db/db.json');
@@ -20,18 +20,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // Do I need to have an app.get for '/' or does the express.static take care of that?
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')));
+app.get('/', (req, res) =>
+  res.sendFile(path.join(__dirname, './public/index.html'))
+);
 
 app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, 'public/notes.html'))
 );
 
-app.get('/api/notes', (req, res) =>
-  res.json(db)
-);
+app.get('/api/notes', (req, res) => {
+  readFromFile('./db/db.json').then((notes) =>
+    res.json(JSON.parse(notes)));
+});
 
-app.post('/api/notes', (req,res) => {
-  // res.send('Placeholder for posting notes.')
+app.post('/api/notes', (req, res) => {
   const { title, text } = req.body;
   if (req.body) {
     const note = {
@@ -46,16 +48,15 @@ app.post('/api/notes', (req,res) => {
   }
 });
 
-app.delete('/api/notes/:id', (req,res) => {
-  // see activity for looping through json file items
-  // res.send('Got a DELETE request at /api/notes/:id')
+app.delete('/api/notes/:id', (req, res) => {
   if (req.params.id) {
-  readFromFile('./db/db.json').then((result) => {
-    let parsedDb = JSON.parse(result);
-    finalParsed = parsedDb.filter(note => note.id !== result.params.id);
-    writeToFile('./db/db.json', finalParsed);
-    res.json(finalParsed)
-  })} else {
+    readFromFile('./db/db.json').then((result) => {
+      let parsedDb = JSON.parse(result);
+      finalParsed = parsedDb.filter(result => result.id !== req.params.id);
+      writeToFile('./db/db.json', finalParsed);
+      res.json(finalParsed)
+    })
+  } else {
     res.json("Sorry, there was an issue deleting your note");
   }
 });
@@ -67,3 +68,6 @@ app.get('*', (req, res) =>
 app.listen(PORT, () =>
   console.log(`App is listening at http://localhost:${PORT}`)
 );
+
+
+// Notes that are saved/deleted remain shown on the page until I kill the server and restart
