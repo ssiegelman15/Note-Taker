@@ -38,6 +38,8 @@ Clone the repository and run "npm i" from the terminal to install necessary file
 
 Please see the below link for the deployed website:
 
+https://calm-ravine-16134.herokuapp.com/
+
 ## Contributing
 
 Please provide your Github username and email.
