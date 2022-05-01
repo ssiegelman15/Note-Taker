@@ -9,7 +9,6 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [Tests](#tests)
 - [Questions](#questions)
 - [License](#license)
 
@@ -43,10 +42,6 @@ https://calm-ravine-16134.herokuapp.com/
 ## Contributing
 
 Please provide your Github username and email.
-
-## Tests
-
-N/A
 
 ## Questions
 
