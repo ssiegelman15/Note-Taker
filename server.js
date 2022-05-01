@@ -29,6 +29,11 @@ app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, 'public/index.html'))
 );
 
+app.delete('/api/notes/:id', (req,res) => 
+  // see activity for looping through json file items
+  res.send('Got a DELETE request at /api/notes/:id')
+);
+
 app.listen(PORT, () =>
   console.log(`App is listening at http://localhost:${PORT}`)
 );
