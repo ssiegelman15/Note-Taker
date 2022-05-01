@@ -32,7 +32,7 @@ Note Taker is an application that uses Express.js to store notes in a database f
 
 ## Installation
 
-Clone the repository and run "npm i" from the terminal to install necessary files"
+Clone the repository and run "npm i" from the terminal to install necessary files.
 
 ## Usage
 
