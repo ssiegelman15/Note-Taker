@@ -5,7 +5,7 @@
   ## Table of Contents
 - [Description](#description)
 - [Technologies Used](#technologies)
-- [Usage Example](#usage)
+- [Website in Action](#usage)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -26,7 +26,7 @@ Note Taker is an application that uses Express.js to store notes in a database f
 - Node.js
 - Express.js
 
-## Usage Example
+## Website in Action
 
 
 
