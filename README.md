@@ -28,7 +28,7 @@ Note Taker is an application that uses Express.js to store notes in a database f
 
 ## Website in Action
 
-
+![Walkthrough](./assets/Video_Walkthrough.gif)
 
 ## Installation
 
