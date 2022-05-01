@@ -4,6 +4,9 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 
+// Set constant for db.json file
+const db = require('./db/db.json');
+
 // Set up port so it can be tested on Heroku
 const PORT = process.env.PORT || 3001;
 
