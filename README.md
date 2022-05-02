@@ -4,18 +4,21 @@
 
   ## Table of Contents
 - [Description](#description)
-- [Technologies Used](#technologies)
 - [Website in Action](#usage)
+- [Technologies Used](#technologies)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [Tests](#tests)
 - [Questions](#questions)
 - [License](#license)
 
 ## Description
 
 Note Taker is an application that uses Express.js to store notes in a database file and present them on the front end for viewing or deletion.
+
+## Website in Action
+
+![Walkthrough](./assets/Video_Walkthrough.gif)
 
 ## Technologies Used
 
@@ -25,10 +28,6 @@ Note Taker is an application that uses Express.js to store notes in a database f
 - JavaScript
 - Node.js
 - Express.js
-
-## Website in Action
-
-
 
 ## Installation
 
@@ -43,10 +42,6 @@ https://calm-ravine-16134.herokuapp.com/
 ## Contributing
 
 Please provide your Github username and email.
-
-## Tests
-
-N/A
 
 ## Questions
 
