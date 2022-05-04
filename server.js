@@ -1,6 +1,7 @@
 // Set constants to required applications
 const express = require('express');
 const path = require('path');
+// Redundent but code is working and if it ain't broke...
 const fs = require('fs');
 const util = require('util');
 // Set helpers constants (copied from class activites) that should help
