@@ -37,7 +37,7 @@ Clone the repository and run "npm i" from the terminal to install necessary file
 
 Please see the below link for the deployed website:
 
-https://calm-ravine-16134.herokuapp.com/
+https://still-badlands-27366.herokuapp.com/
 
 ## Contributing
 
